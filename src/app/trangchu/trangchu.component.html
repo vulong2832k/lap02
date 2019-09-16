@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header"><b><i class="fas fa-address-book">Danh Sách Sinh Viên</i></b></div>
+        <div class="card-body">
+            <div class="row a">
+                <input class="form-control col-md-3" id="myInput" type="text" placeholder="Search.."
+                    [(ngModel)]="Search">
+                <div class="col-md-1">
+                    <button class="btn btn-primary b "><i class="fa fa-search"></i></button></div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">FirstMidName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">EnrollmentDate</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let student of liststudents| filter:Search | paginate:{itemsPerPage:3, 
+                                                                                        currentPage:p }'>
+                        <td>{{student.FirstMidName}}</td>
+                        <td>{{student.LastName}}</td>
+                        <td>{{student.EnrollmentDate}}</td>
+                        <td>
+                            
+                          
+                                    
+                             <a [routerLink]="['/hs', student.ID]"><i class="fas fa-info"></i></a>
+                                    
+                              
+                                <i class="far fa-trash-alt ml-3" 
+                                        (click)="onDeleteStudent(student.ID)"></i>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-3">
+                    <b>
+                        showing {{config.currentPage}} of {{liststudents.length/config.itemsPerPage | number:"1.0-0"}}
+                    </b>
+                </div>
+                <pagination-controls (pageChange)="p=$event" class="col-7"></pagination-controls>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.card-header{
+    background-color: #ccc
+}
+.nav-link{
+    font-size: 20px;
+    color:dodgerblue; 
+
+}
+.container{
+    margin-top: 20px;
+}
+.table th,td{
+    border:#ddd solid 2px;
+}
+.form-control{
+    width: 250px;
+    margin-bottom: 5px;
+}
+.bdcricle{
+    background-color: #007bff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    
+
+
+}
+.col-md-1{
+    height: 38px;
+    padding-left: 0
+    
+}
+.a{
+    margin-left: 1px
+}
+.b{
+    width: 50px;
+}
+.col {
+    -ms-flex-preferred-size: 0;
+    /* flex-basis: 0; */
+    -ms-flex-positive: 1;
+    flex-grow: 0; 
+    max-width: 100%;
+}
